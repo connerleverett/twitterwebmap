@@ -1,0 +1,88 @@
+{%load staticfiles %}
+<!DOCTYPE html>
+<html style="height:100%; margin: 0" >
+
+<head>
+
+<!--This is the title-->
+<title> Twitter Mine </title>
+
+<!--This is for scaling on a mobile application-->
+<meta name="viewport" content = "width=device-width, initial-scale=1.0">
+
+<!-- These are the leaflet javascript files-->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.1/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.0.1/dist/leaflet.js"></script>
+
+<!-- These are the mapbox files, where the basemap is from-->
+<script src='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.js'></script>
+<link href='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.css' rel='stylesheet' />
+
+<!--This is the javascript which does the 'heavy lifting' for the webpage-->
+<script src = {% static "twitterMineWork.js" %}></script> 
+
+<!--CSS -->
+<link rel="stylesheet" type="text/css" href = "/static/styleSheet.css">
+
+<!--CDN for jQuery-->
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js"></script>
+
+</head>
+	<body style = "height: 100%;margin: 0">
+	
+		<div  id="map" style="height:100%; width:100%;margin: 0"> </div>
+		<div id="backgroundCover"></div>
+			<div id="img">
+				<img src = "http://vignette1.wikia.nocookie.net/overwatch/images/9/97/Smicon_twitter.png/revision/latest?cb=20160514010100" style="width:100px;height:75px";/>
+			</div>
+			
+			<div id ="inputBackground"></div>
+			<a href="https://github.com/connerleverett" style="color:black">
+				<div id="github" style="text-align:center; font-family:Arial; padding-top:1.5%;">Fork on Github!</div>
+			</a>
+			
+			<div id="introContainer"></div>
+			<div id="intro" onclick="removeDiv()">
+				<p id="introStatement"> Welcome to the UVic's Geography 428 Twitter Map</p>
+				<p id="words"> <b>Who?</b> This map was created by a UVic student for users with limited GIS knowledge.</p>
+				<p id="words"> <b>What?</b> This web map allows users to search through tweets to visualize where people are tweeting about certain topics.</p>
+				<p id="words"> <b>Why?</b> GIS can be a daunting subject which can take years to master. This project allows users to quickly visualize spatial data,
+				see how different distributions affect the visualization, and download the data for themselves!</p>
+				<p id="words"> <b>When?</b> This project began in September 2016 and has tweets dating back to November 10th, 2016. </p>
+				<p id="words"> <b>How do I use this?</b> 
+				Enter a word in either the 'Search through Tweets' or 'Search through Hashtags' box to search through either the body of the tweet, or if
+				the word was attached as a hashtag. If you would like to visualize the data with the 'Equal Interval' distribution please enter 3, 4, or 5
+				as the number of classes. Click in this box to get started!</p>
+				<p id="words"> <b>How was this made?</b> 
+				Tweets are mined from twitter using the Python twitter module, the tweets are stored in a PostgreSQL, the website is built
+				on a Django framework, the base map is from a javascript library called leaflet, and the data processing is done in Python and javascript.</p>				
+			</div>
+			
+			<form method="post">
+				<div id="input">				
+				  Search through Tweets:<br>
+				  <input type="text" name="Search through Tweets" id="tweets" ><br>
+				  Search through Hashtags:<br>
+				  <input type="text" name="Search through Hashtags" id="hashtags"><br>
+				  <form action="">
+					  <input type="radio" name="radio" id="nB"> Natural Breaks<br>
+					  <input type="radio" name ="radio" id="Q"> Quantile<br>
+					  <input type="radio" name = "radio" id="eI"> Equal Interval 
+					  --Number of Classes
+					  <input type="text" style="width:20px" id="eIinput"><br>
+				  </form>
+				  <input id="clickMe" value="Search" type="button" onclick = "runPython();"/>				
+				</div>		
+			</form>
+
+			<script type="text/javascript">
+							
+				//Pass data
+				distribution = {{distribution_json|safe}};
+				dictionaryOfStates = {{dictionary_json|safe}};
+				//This is needed as the page needs to open before the Javascript is run
+				window.onload = runJavaScript();
+			</script>
+		
+	</body>
+</html>

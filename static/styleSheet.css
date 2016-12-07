@@ -1,0 +1,193 @@
+#map {
+	width: 100%;
+	height: 300px;
+	position: relative;
+}
+
+#inputBackground{
+	border-radius: 25px;
+	position:absolute;
+	width: 23.5%;
+	height: 22%;
+	top:0.25%;
+	right:2.25%;
+	background-color:white;
+	opacity:0.5;
+}
+
+#input{
+	position:absolute;
+	top: 1%;
+	right: 3%;
+	margin: 0 0 1em 0;
+	z-index: 10;
+	display: inline-block;
+}
+.infoLegend {
+	bottom:60px;
+	padding: 6px 8px;
+    line-height: 18px;
+    color: #555;
+	background: rgba(255,255,255,0.9);
+	box-shadow: 0 0 15px rgba(0,0,0,0.4);
+    border-radius: 5px;
+}
+
+.infoLegend i {
+    width: 90px;
+    height: 18px;
+    float: left;
+    margin-right: 20px;
+}
+
+#legendBackground{
+	border-radius: 25px;
+	position:absolute;
+	width: 15.5%;
+	height: 20%;
+	bottom:10%;
+	right:1.5%;
+	background-color:white;
+	z-index:0;
+	opacity:0.5;
+}
+
+#img{
+	border-radius: 25px;
+	position:absolute;
+	top:1.5%;
+	right:2.75%;
+	z-index:10;
+}
+
+.info {
+	position:fixed;
+	right: 50%;
+    padding: 6px 8px;
+    font: 14px/16px Arial, Helvetica, sans-serif;
+    background: white;
+    background: rgba(255,255,255);
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    border-radius: 5px;
+	
+}
+.info h4 {
+    margin: 0 0 5px;
+    color: #777;
+}
+
+br{
+	line-height:140%;
+}
+
+#export{
+	height: 200px;
+	bottom:7%;
+	right:10.15%;
+	position:absolute;
+	width: 15px;
+	height: 15px;
+}
+
+#myButton{
+	border-radius:10px;
+}
+
+#myButton:hover{
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #bab1ba), color-stop(1, #ededed));
+	background:-moz-linear-gradient(top, #bab1ba 5%, #ededed 100%);
+	background:-webkit-linear-gradient(top, #bab1ba 5%, #ededed 100%);
+	background:-o-linear-gradient(top, #bab1ba 5%, #ededed 100%);
+	background:-ms-linear-gradient(top, #bab1ba 5%, #ededed 100%);
+	background:linear-gradient(to bottom, #bab1ba 5%, #ededed 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#bab1ba', endColorstr='#ededed',GradientType=0);
+	background-color:#bab1ba;
+}
+
+#myButton:active{
+	position:relative;
+	top: 1px;
+}
+
+#introContainer{
+	border-radius:25px;
+	position: absolute;
+	width: 77%;
+	height: 80%;
+	z-index: 15;
+	top: 10.5%;
+	left: 11.5%;
+	background: #DDDDDD;
+}
+
+#intro{
+	border-radius:25px;
+	position: absolute;
+	width: 75%;
+	height: 70%;
+	z-index: 15;
+	top: 8%;
+	left: 12.5%;
+
+}
+
+#introStatement{
+	padding-top: 2%;
+	text-align:center;
+	font-size:30px;
+	font-family: Georgia;
+}
+
+#words{
+	
+	font-size:20px;
+	line-height: 10px;
+	font-family: Georgia;
+	margin: 0 0 1em 0;
+	line-height: 1.5em;	
+}
+
+#header{
+	text-align:center;
+	font-size:25px;
+	line-height: 10px;
+	font-family: Georgia;
+	margin: 0 0 .5em 0;
+	
+}
+
+#github{
+	border-radius:20px;
+	position: absolute;
+	width: 7%;
+	height: 6%;
+	z-index: 100000;
+	top: 0.5%;
+	left: 0.4%;
+	background: #DDDDDD;
+	opacity:1;
+}
+
+#github:hover{
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #bab1ba), color-stop(1, #ededed));
+	background:-moz-linear-gradient(top, #bab1ba 5%, #ededed 100%);
+	background:-webkit-linear-gradient(top, #bab1ba 5%, #ededed 100%);
+	background:-o-linear-gradient(top, #bab1ba 5%, #ededed 100%);
+	background:-ms-linear-gradient(top, #bab1ba 5%, #ededed 100%);
+	background:linear-gradient(to bottom, #bab1ba 5%, #ededed 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#bab1ba', endColorstr='#ededed',GradientType=0);
+	background-color:#bab1ba;
+}
+
+#backgroundCover{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top:0;
+	left:-10;
+	z-index: 15;
+	background: #939393;
+	opacity:0.8;
+	
+}
+
